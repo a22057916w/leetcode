@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <string>
+#include <regex>
 using namespace std;
 
 class Solution {
@@ -22,6 +24,10 @@ public:
         }
     }
 };
+
+vector<int> extractNums(string inputs) {
+
+}
 
 int main() {
   vector<int> nums = {2, 7, 11, 15};
