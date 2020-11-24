@@ -25,7 +25,11 @@ public:
     }
 };
 
-vector<int> extractNums(string inputs) {
+vector<int> extractNums(string s) {
+  string front = s.find('[');
+  string end = s.find(']');
+  string nums = s.substr(front + 1, (end - 1) - front);
+  
 
 }
 
