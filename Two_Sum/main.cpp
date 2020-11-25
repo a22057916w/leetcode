@@ -2,7 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
-#include <regex>
+#include <cstring>
 using namespace std;
 
 class Solution {
@@ -28,9 +28,14 @@ public:
 vector<int> extractNums(string s) {
   string front = s.find('[');
   string end = s.find(']');
-  string nums = s.substr(front + 1, (end - 1) - front);
-  
+  string numss = s.substr(front + 1, (end - 1) - front);
 
+  vector<int> nums;
+  char *token = strtok(nums.data(), ',')
+  while(token != NULL) {
+    nums.push_back(stoi(token));
+    token = strtok(NULL, ",");
+  }
 }
 
 int main() {
