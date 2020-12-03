@@ -47,10 +47,18 @@ vector<int> extractNums(string s) {
 }
 
 
+// extracting data in "target = n" to Var (int)target in main scope
+int extractTarget(string s) {
+  int pos = s.find_last_of('=');
+  string target = s.substr(pos + 1, s.length() - 1);
+  return stoi(target);
+}
 
 int main() {
-  string data = "nums = [2,7,11,15], target = 9";
+  string data = "";
+  cin >> data;
 
+  // accquire legal necessary parameters
   vector<int> nums = extractNums(data);
   int target = 9;
 
