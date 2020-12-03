@@ -2,7 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
-#include <cstring>
+#include <sstream>
 using namespace std;
 
 class Solution {
@@ -25,21 +25,33 @@ public:
     }
 };
 
-vector<int> extractNums(string s) {
-  string front = s.find('[');
-  string end = s.find(']');
-  string numss = s.substr(front + 1, (end - 1) - front);
 
-  vector<int> nums;
-  char *token = strtok(nums.data(), ',')
-  while(token != NULL) {
-    nums.push_back(stoi(token));
-    token = strtok(NULL, ",");
-  }
+// extracting data in the "num = [n1,n2,...,nn]" to a string "n1,n2,...,nn",
+// then spliting the comma and stroing to a vector<int>.
+vector<int> extractNums(string s) {
+
+  // performing string extracting.
+  int front = s.find('[');
+  int end = s.find(']');
+  string input = s.substr(front + 1, (end - 1) - front);
+
+  // performing spliting using stringstream and string lib,
+  // and storing to a vector<int> container.
+  vector<int> v;
+  stringstream ss(input);
+  string token;
+  while(getline(ss, token, ','))
+    v.push_back(stoi(token));
+
+  return v;
 }
 
+
+
 int main() {
-  vector<int> nums = {2, 7, 11, 15};
+  string data = "nums = [2,7,11,15], target = 9";
+
+  vector<int> nums = extractNums(data);
   int target = 9;
 
   vector<int> ans = Solution::twoSum(nums, target);
