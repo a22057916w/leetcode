@@ -22,6 +22,7 @@ public:
           else
             cache.insert(make_pair(nums[i], i));
         }
+        reutrn NULL;
     }
 };
 
