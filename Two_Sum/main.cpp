@@ -23,7 +23,7 @@ public:
             cache.insert(make_pair(nums[i], i));
         }
         // in case things go wrong
-        return nullptr;
+        return answer;
     }
 };
 
