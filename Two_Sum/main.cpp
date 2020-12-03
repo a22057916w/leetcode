@@ -23,7 +23,7 @@ public:
             cache.insert(make_pair(nums[i], i));
         }
         // in case things go wrong
-        reutrn NULL;
+        return nullptr;
     }
 };
 
@@ -54,6 +54,19 @@ int extractTarget(string s) {
   int pos = s.find_last_of('=');
   string target = s.substr(pos + 1, s.length() - 1);
   return stoi(target);
+}
+
+void printOut(vector<int> v) {
+  // print out like [n1,n2,...nn]
+  cout << "[";
+  for(size_t n : v) {
+    if(n > 0)
+      cout << ",";
+    cout << n;
+  }
+  cout << "]" << endl;;
+
+  return;
 }
 
 int main() {
