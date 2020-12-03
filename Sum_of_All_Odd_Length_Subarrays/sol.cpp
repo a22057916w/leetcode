@@ -5,7 +5,7 @@
 using namespace std;
 
 // burtal force
-/*class Solution {
+class Solution {
 public:
     int sumOddLengthSubarrays(vector<int>& arr) {
       int n = arr.size();
@@ -21,10 +21,10 @@ public:
 
       return ans;
     }
-};*/
+};
 
 // math solution
-class Solution {
+/*class Solution {
 public:
   int sumOddLengthSubarrays(vector<int>& arr) {
     int n = arr.size();
@@ -54,4 +54,4 @@ public:
     }
     return ans;
   }
-};
+};*/
