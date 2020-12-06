@@ -5,16 +5,15 @@ using namespace std;
 class Solution {
 public:
     static int removeDuplicates(vector<int>& nums) {
-        int front , end;
+        int pos, target;
 
-        front = end = nums[0];
+        pos = 1;
+        target = nums[0];
         for(size_t i = 1; i < nums.size(); ++i) {
-          if(end == num[i])
-            end = i;
-          else {
-            if(end > front)
-              nums.erase(nums.begin() + front + 1, nums.begin() + end)
-            front = end;
+          if(target != nums[i]){
+            target = nums[i];
+            nums.erase(nums.begin() + pos, nums.begin() + i);
+            i = ++pos;
           }
         }
         for(size_t n : nums)
@@ -23,7 +22,7 @@ public:
 };
 
 int main() {
-  vector<int> v = {0,0,1,1,1,2,2,3,3,4};
+  vector<int> v = {1,1,2};
   Solution::removeDuplicates(v);
   return 0;
 }
