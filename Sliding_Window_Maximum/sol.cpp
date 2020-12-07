@@ -3,57 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-// brutal force, time limit exceeded
-/*class Solution {
-public:
-    static vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-      vector<int> ans;
-
-      int maxn = -1E9, pos = 0, curr = 0;
-      for(int i = 0; i < nums.size(); i++) {
-          if(i == nums.size() - k) {
-            for(int j = i; j < nums.size(); j++) {
-              if(pos < i)
-                maxn = -1E9;
-              if(maxn < nums[j]) {
-                    maxn = nums[j];
-                    pos = j;
-                }
-            }
-            ans.push_back(maxn);
-            break;
-          }
-          else if(i == 0) {
-            for(int j = 0; j < k; j++)
-              if(maxn < nums[j]) {
-                maxn = nums[j];
-                pos = j;
-              }
-            curr = k - 1;
-            ans.push_back(maxn);
-          }
-          else {
-            if(pos < i) {
-                maxn = -1E9;
-                curr++;
-                for(int j = i; j <= curr; j++)
-                    if(maxn < nums[j]) {
-                        maxn = nums[j];
-                        pos = j;
-                    }
-            }
-            else {
-                if(maxn < nums[++curr]) {
-                    maxn = nums[curr];
-                    pos = curr;
-                }
-            }
-            ans.push_back(maxn);
-          }
-      }
-      return ans;
-    }
-};*/
+// !!! brutal force, time limit exceeded !!!
 
 // using double-ended-queue as a container for sliding-window
 // the deque is a monotone decrease seqeuence. Therefore, the
