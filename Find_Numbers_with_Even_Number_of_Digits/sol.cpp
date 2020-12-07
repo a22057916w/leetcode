@@ -7,7 +7,7 @@ public:
     int findNumbers(vector<int>& nums) {
       int even = 0;
 
-        // 0 < nums[i] < 1E5
+        // 0 <= nums[i] <= 1E5
         for(size_t n : nums) {
           if(n < 10)
             continue;
