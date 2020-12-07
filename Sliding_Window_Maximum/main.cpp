@@ -19,7 +19,7 @@ public:
 
       // dealing with the following sliding-windows with deqeu and vector
       for(int i = k; i < nums.size(); i++) {
-        ans.push_back([maxWindow.front()]);
+        ans.push_back(nums[maxWindow.front()]);
 
         if(maxWindow.size() > 0 && i - maxWindow.front() >= k)
           maxWindow.pop_front();
