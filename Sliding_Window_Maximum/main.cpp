@@ -33,6 +33,7 @@ public:
       return ans;
     }
 };
+
 int main() {
   vector<int> v = {9,10,9,-7,-4,-8,2,-6};
   int k = 5;
