@@ -4,8 +4,6 @@ using namespace std;
 
 class Solution {
 public:
-  class Solution {
-public:
   static double myPow(double x, int n) {
     double ans = powCur(x, abs(n));
     if(n < 0) {
