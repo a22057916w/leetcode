@@ -4,7 +4,7 @@ class Solution {
 public:
     int strStr(string haystack, string needle) {
         char *s = haystack.data(), *find = needle.data();
-        if(s == 0 || find == 0)
+        if(find == 0)
             return 0;
 
         int index = 0;
