@@ -18,7 +18,7 @@ public:
     }
 };
 
-// impelement using c++ stl lib, 5ms faster
+// impelement using c++ stl lib, 240ms faster
 class Solution {
 public:
     int strStr(string haystack, string needle) {
