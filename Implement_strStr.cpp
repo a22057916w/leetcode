@@ -1,4 +1,4 @@
-// For c underlying approach
+// impelement using c standard lib underlying approaching
 #include <cstring>
 class Solution {
 public:
@@ -15,5 +15,20 @@ public:
             index++;
         }
         return index;
+    }
+};
+
+// impelement using c++ stl lib, 5ms faster
+class Solution {
+public:
+    int strStr(string haystack, string needle) {
+        if(needle == "")
+            return 0;
+
+        int pos = haystack.find(needle);
+        if(pos != string::npos)
+            return pos;
+        else
+            return -1;
     }
 };
