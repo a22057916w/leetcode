@@ -8,7 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution1 {
 private:
     bool stop;
     ListNode *left;
@@ -51,5 +51,49 @@ public:
             // The right pointer moves one step back via backtracking.
             left = left->next;
         }
+    }
+};
+
+
+class Solution2 {
+private:
+    bool stop;
+    ListNode *left;
+public:
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+        if(head == NULL)
+            return NULL;
+
+        // Move the two pointers until they reach the proper starting point
+        // in the list.
+        ListNode *curr = head, *prev = NULL;
+        while(m > 1) {
+            prev = curr;
+            curr = curr->next;
+            m--;
+            n--;
+        }
+
+        // The two pointers that will fix the final connections.
+        ListNode *con = prev, *tail = curr;
+
+        // Iteratively reverse the nodes until n becomes 0.
+        while(n > 0) {
+            ListNode *nextTmp = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextTmp;
+            n--;
+        }
+
+        // Adjust the final connections. If con == NULL means the starting point
+        // is at the beginning, which is head.
+        if(con != NULL)
+            con->next = prev;
+        else
+            head = prev;
+
+        tail->next = curr;
+        return head;
     }
 };
