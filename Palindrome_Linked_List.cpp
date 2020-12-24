@@ -37,6 +37,6 @@ public:
         slow = slow->next;
       }
 
-      return false;
+      return true;
     }
 };
