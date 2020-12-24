@@ -4,7 +4,7 @@ public:
       ListNode *fast, *slow;
       fast = slow = head;
 
-      while(fast != NUll && fast->next != NULL) {
+      while(fast != NULL && fast->next != NULL) {
         slow = slow->next;
         fast = fast->next->next;
       }
