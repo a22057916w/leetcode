@@ -1,38 +1,42 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        if(head == NULL)
-            return true;
+      ListNode *fast, *slow;
+      fast = slow = head;
 
-        ListNode *reversedHead = reverse(head);
+      while(fast != NUll && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
+      }
 
-        return isEqual(head, reversedHead);
+      fast = head;
+      slow = reverse(slow);
+
+      return isEqual(fast, slow);
     }
 
     ListNode *reverse(ListNode *head) {
-        ListNode *prev = NULL;
-        ListNode *curr = head;
+      ListNode *prev = NULL;
+      ListNode *curr = head;
 
-        while(curr != NULL) {
-            ListNode *nextTmp = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = nextTmp;
-        }
+      while(curr != NULL) {
+        ListNode *nextTmpe = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextTmp;
+      }
 
-        return prev;
+      return prev;
     }
-    
-    bool isEqual(ListNode *sh, ListNode *h) {
-        ListNode *sc = sh, *c = h;
 
-        while(sc != NULL && c != NULL) {
-            if(sc->val != c->val)
-                return false;
-            sc = sc->next;
-            c = c->next;
-        }
+    bool isEqual(ListNode *fast, ListNode *slow) {
+      while(slow != NULL) {
+        if(fast->val != slow->val)
+          return false;
+        fast = fast->next;
+        slow = slow->next;
+      }
 
-        return true;
+      return false;
     }
 };
