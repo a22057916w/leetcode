@@ -6,6 +6,8 @@ public:
 
         int cnt = 0;
         string s = "";
+
+        // std::string::getline
         while(getline(ss, token, '.')) {
             if(cnt++ > 0)
                 s += "[.]";
