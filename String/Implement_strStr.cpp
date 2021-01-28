@@ -1,5 +1,9 @@
 // impelement using c standard lib underlying approaching
 #include <cstring>
+#include <string>
+
+using std::string;
+
 class Solution {
 public:
     int strStr(string haystack, string needle) {
