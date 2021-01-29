@@ -1,3 +1,7 @@
+/*
+e.g. LLRRLR, RRLL, LLRR, RLLR
+*/
+
 class Solution {
 public:
     int balancedStringSplit(string s) {
