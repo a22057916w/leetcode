@@ -1,3 +1,7 @@
+/*
+e.g. ()(), (()), ()(())
+*/
+
 #include <algorithm>
 
 class Solution {
