@@ -17,7 +17,7 @@ public:
     int minimumDeviation(vector<int>& nums) {
       int maxx = INT_MIN, minn = INT_MAX;
 
-      // Step 1 :- increase all elements to as maximum as it can and track the minn number and also the result
+      // Step 1 : increase all elements to as maximum as it can and track the minn number and also the result
       for(auto& n : nums) {
         if(n % 2 != 0)
           n *= 2;
@@ -26,7 +26,7 @@ public:
         minn = min(minn, n);
       }
 
-      // Step 2 :- Insert into max_heap and try to decrease the maxx as much as u can
+      // Step 2 : Insert into max_heap and try to decrease the maxx as much as u can
       priority_queue<int> pq;
       for(const auto& n : nums)
         pq.push(n);
