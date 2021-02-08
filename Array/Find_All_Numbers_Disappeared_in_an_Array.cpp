@@ -8,6 +8,9 @@ use extra memory for the well-placed list, therefore, we find a way to mark the
 index. We mark the original list by giving the element a negtive sign.
 */
 
+#include <vector>
+#include <cmath>
+
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
