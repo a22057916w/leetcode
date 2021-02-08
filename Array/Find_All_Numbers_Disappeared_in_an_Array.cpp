@@ -7,7 +7,6 @@ method , we get [1,2,_,4]. So we know the missing number is 3. However we cannot
 use extra memory for the well-placed list, therefore, we find a way to mark the
 index. We mark the original list by giving the element a negtive sign.
 */
-
 #include <vector>
 #include <cmath>
 
