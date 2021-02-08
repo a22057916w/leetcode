@@ -1,3 +1,6 @@
+#include <vector>
+using std::vector;
+
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
