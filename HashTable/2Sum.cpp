@@ -1,5 +1,3 @@
-// This is for leetcode submition
-
 #include <iostream>
 #include <vector>
 #include <unordered_map>
