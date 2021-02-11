@@ -8,6 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+ 
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
@@ -25,7 +26,7 @@ public:
         }
         curr = curr->next;
       }
-      
+
       if(l1 != NULL) {
         curr->next = l1;
         l1 = l1->next;
