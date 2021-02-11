@@ -10,6 +10,8 @@ public:
             prev = curr;
             curr = nextTmp;
         }
+
+        // new head
         return prev;
     }
 };
