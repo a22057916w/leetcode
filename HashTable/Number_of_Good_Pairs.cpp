@@ -1,3 +1,9 @@
+// Question : https://leetcode.com/problems/number-of-good-pairs/
+
+#include <algorithm>
+#include <unordered_map>
+using namespace std;
+
 class Solution {
 public:
     int numIdenticalPairs(vector<int>& nums) {
