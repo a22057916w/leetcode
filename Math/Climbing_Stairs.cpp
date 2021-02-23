@@ -3,7 +3,7 @@
 using namespace std;
 
 
-/*class Solution {
+class Solution1 {
 public:
     int climbStairs(int n) {
         return rec(n);
@@ -19,10 +19,10 @@ public:
         else
             return rec(n - 1) + rec(n - 2);
     }
-};*/
+};
 
 // the recursion pattern is Fibnoacci series
-class Solution {
+class Solution2 {
 public:
     int climbStairs(int n) {
       int maxn = 50;
