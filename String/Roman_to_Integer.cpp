@@ -26,3 +26,29 @@ public:
       return 0;
     }
 };
+
+// using c pointer and switch
+class Solution2 {
+public:
+    int romanToInt(string s) {
+      char *cs = s.data();
+
+      int sum = 0;
+      for(;*cs != '\0'; cs++)
+        sum += getValue(cs);
+      return sum;
+    }
+
+    int getValue(const char *cs) {
+      switch(*cs) {
+        case 'I': return (cs[1] == 'V' || cs[1] == 'X') ? -1 : 1;
+        case 'X': return (cs[1] == 'L' || cs[1] == 'C') ? -10 : 10;
+        case 'C': return (cs[1] == 'D' || cs[1] == 'M') ? -100 : 100;
+        case 'V': return 5;
+        case 'L': return 50;
+        case 'D': return 500;
+        case 'M': return 1000;
+      }
+      return 0;
+    }
+};
