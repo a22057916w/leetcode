@@ -5,7 +5,7 @@ private:
 public:
     /** Initialize your data structure here. */
     MyHashMap() : elements(0) {
-        table.resize(3000);     // m = 1000, load factor = 10000/3000 = 0.33333
+        table.resize(3000);     // m = 3000, load factor = 0.33333
     }
 
     /** value will always be non-negative. */
