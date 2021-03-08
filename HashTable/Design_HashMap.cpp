@@ -1,3 +1,6 @@
+#include <list>
+#include <vector>
+
 class MyHashMap {
 private:
     vector<list<pair<int, int>>> table;
