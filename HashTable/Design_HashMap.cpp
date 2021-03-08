@@ -38,7 +38,13 @@ public:
 
     /** Removes the mapping of the specified value key if this map contains a mapping for the key */
     void remove(int key) {
-
+      int index = key % table.size();   // perform hash huction
+      for(auto it = table[index].begin(); it != table[index].end(); it++)
+        if(it->first == key) {
+          elements--;
+          it = table[index].erase(it);
+          return;
+        }
     }
 };
 
