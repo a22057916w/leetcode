@@ -5,14 +5,11 @@ private:
 public:
     /** Initialize your data structure here. */
     MyHashMap() : elements(0) {
-        table.resize(20);
+        table.resize(3000);     // m = 1000, load factor = 10000/3000 = 0.33333
     }
 
     /** value will always be non-negative. */
     void put(int key, int value) {
-        if((double)(elements / table.size()) > 0.5)
-          grow();
-
         int index = key % table.size();   // perform hash huction
         for(auto& it : table[index])
           if(it.first == key) {
@@ -45,10 +42,6 @@ public:
           it = table[index].erase(it);
           return;
         }
-    }
-
-    void grow() {
-      vector<list<pair<int, int>>> t2;
     }
 };
 
