@@ -20,14 +20,14 @@ public:
             return;
           }
 
-        list.push_front(make_pair(key, value));
-        element++;
+        table[index].push_front(make_pair(key, value));
+        elements++;
     }
 
     /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
     int get(int key) {
       int index = key % table.size();   // perform hash huction
-      for(const auto& it : table[index[])
+      for(const auto& it : table[index])
         if(it.first == key) {
           elements--;
           return it.second;
@@ -45,6 +45,10 @@ public:
           it = table[index].erase(it);
           return;
         }
+    }
+
+    void grow() {
+      vector<list<pair<int, int>>> t2;
     }
 };
 
