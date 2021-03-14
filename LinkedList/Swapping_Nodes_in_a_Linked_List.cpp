@@ -33,3 +33,29 @@ public:
       return head;
     }
 };
+
+
+// two pointers, one pass
+class Solution2 {
+public:
+    ListNode* swapNodes(ListNode* head, int k) {
+      ListNode *ptr1 = head, *ptr2 = head, *kth;
+
+      // find the first pos to be swaped
+      while(--k)
+        ptr1 = ptr1->next;
+
+      kth = ptr1;
+      ptr1 = ptr1->next;
+
+      // when ptr1 reach the end of the list, the gap between ptr1 and ptr2 is
+      // exactly k - 1, and ptr2 would be the second pos to be swaped
+      while(ptr1) {
+        ptr1 = ptr1->next;
+        ptr2 = ptr2->next;
+      }
+      swap(kth->val, ptr2->val);
+
+      return head;
+    }
+};
