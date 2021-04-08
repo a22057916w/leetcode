@@ -31,7 +31,3 @@ public:
       return maxl;
     }
 };
-
-int main() {
-  return 0;
-}
