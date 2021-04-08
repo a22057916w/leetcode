@@ -1,6 +1,7 @@
 /*
 Reference:
 http://web.ntnu.edu.tw/~algo/Subsequence.html
+https://www.mdeditor.tw/pl/gbLO/zh-tw
 */
 
 // https://leetcode.com/problems/longest-increasing-subsequence/
