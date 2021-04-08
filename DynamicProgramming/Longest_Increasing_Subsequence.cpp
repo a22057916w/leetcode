@@ -35,20 +35,19 @@ public:
 class Solution2 {
 public:
     int lengthOfLIS(vector<int>& nums) {
-      vector<int> lng(nums.size(), 1);
+      vector<int> tail(nums.size(), 0);
+      int len = 0;
 
-      for(int i = 0; i < nums.size(); i++) {
-        // find out
-        for(int j = 0; j < i; j++)
-          if(nums[j] < nums[i])
-            lng[i] = max(lng[i], lng[j] + 1);
+      for(const auto& e : nums) {
+        if(e < tail[0])
+          tail[0] = e;
+        else if(e > tail[len])
+          tail[len++] = e;
+        else
+          tail[bisec(tail, 0, len, e)] = e;
       }
 
-      int maxl = INT_MIN;
-      for(const auto& e : lng)
-        maxl = max(maxl, e);
-
-      return maxl;
+      return len;
     }
 
     int bisec(vector<int>& tail, int left, int right, int key) {
@@ -59,7 +58,7 @@ public:
         else
           left = mid;
       }
-      
+
       return right;
     }
 };
