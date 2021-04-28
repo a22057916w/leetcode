@@ -35,23 +35,23 @@ public:
 class Solution2 {
 public:
     int lengthOfLIS(vector<int>& nums) {
-      vector<int> tail(nums.size(), 0);
-      int len = 0;
+      vector<int> tail(nums.size(), INT_MAX / 2);
+      int len = 1;
 
       for(const auto& e : nums) {
         if(e < tail[0])
           tail[0] = e;
-        else if(e > tail[len])
+        else if(e > tail[len - 1])
           tail[len++] = e;
         else
-          tail[bisec(tail, 0, len, e)] = e;
+          tail[bisec(tail, -1, len - 1, e)] = e;
       }
 
       return len;
     }
 
     int bisec(vector<int>& tail, int left, int right, int key) {
-      while(left < right) {
+      while(right - left > 1) {
         int mid = (left + right) >> 1;
         if(tail[mid] >= key)
           right = mid;
