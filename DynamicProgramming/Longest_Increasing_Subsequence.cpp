@@ -2,6 +2,7 @@
 Reference:
 http://web.ntnu.edu.tw/~algo/Subsequence.html
 https://www.mdeditor.tw/pl/gbLO/zh-tw
+https://blog.techbridge.cc/2016/09/24/binary-search-introduction/
 */
 
 // https://leetcode.com/problems/longest-increasing-subsequence/
