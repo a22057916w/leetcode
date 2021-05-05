@@ -13,7 +13,7 @@ class Solution {
 public:
     int maxEnvelopes(vector<vector<int>>& envelopes) {
       sort(envelopes.begin(), envelopes.end(), [](const auto& a, const auto& b){
-        return a[0] < b[0] || (a[0] == b[0] && a[1] < b[1]);} );
+        return a[0] < b[0] || (a[0] == b[0] && a[1] > b[1]);} );
 
 
       vector<int> tail(envelopes.size(), INT_MAX / 2);
@@ -30,22 +30,16 @@ public:
 
       return len;
     }
-
     int bisec(vector<int>& tail, int L, int R, int key) {
+
       while(R - L > 1) {
         int M = (R - L) / 2 + L;
-        if(key == tail[M])
-          return M;
-        else if(key > tail[M])
-          L = M + 1;
+        if(tail[M] >= key)
+          R = M;
         else
-          R = M - 1;
+          L = M;
       }
-
-      for(int i = L i <= R; i++)
-        if(tail[i] == key)
-          return i;
-
-      return -1;
-    }
+             
+      return R;
+      }
 };
