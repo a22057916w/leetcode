@@ -27,6 +27,8 @@ public:
         else
           tail[bisec(tail, 0, len - 1, envl[1])] = envl[1];
       }
+
+      return len;
     }
 
     int bisec(vector<int>& tail, int L, int R, int key) {
