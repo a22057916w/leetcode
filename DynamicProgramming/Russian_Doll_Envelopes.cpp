@@ -25,7 +25,7 @@ public:
         else if(envl[1] > tail[len - 1])
           tail[len++] = envl[1];
         else
-          tail[bisec()]
+          tail[bisec(tail, 0, len - 1, envl[1])] = envl[1];
       }
     }
 
