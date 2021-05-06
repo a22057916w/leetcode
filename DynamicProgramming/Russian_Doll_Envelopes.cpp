@@ -20,7 +20,7 @@ public:
       int len = 1;
 
       for(const auto& envl : envelopes) {
-        if(envl[1] < tail[0])
+        if(envl[1] <= tail[0])
           tail[0] = envl[1];
         else if(envl[1] > tail[len - 1])
           tail[len++] = envl[1];
@@ -39,7 +39,7 @@ public:
         else
           L = M;
       }
-             
+
       return R;
       }
 };
